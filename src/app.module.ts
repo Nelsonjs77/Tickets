@@ -3,9 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductosModule } from './productos/productos.module';
 import { TicketsModule } from './tickets/tickets.module';
+import { MongooseModule } from '@nestjs/mongoose';
+
 
 @Module({
-  imports: [ProductosModule, TicketsModule],
+  imports: [MongooseModule.forRoot('mongodb://localhost:27017/tickets-venta'),
+  ProductosModule, 
+  TicketsModule],
   controllers: [AppController],
   providers: [AppService],
 })

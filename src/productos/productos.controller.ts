@@ -17,12 +17,12 @@ export class ProductosController {
     return this.productosService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id', ParseUUIDPipe) id: string) {
-    return this.productosService.findOne(id);
+  @Get(':name')
+  findOne(@Param('name') name: string) {
+    return this.productosService.findOne(name);
   }
 
-  @Patch(':id')
+  /* @Patch(':id')
   update(@Param('id', ParseUUIDPipe) id: string, @Body() updateProductoDto: UpdateProductoDto) {
     return this.productosService.update(id, updateProductoDto);
   }
@@ -30,5 +30,5 @@ export class ProductosController {
   @Delete(':id')
   remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.productosService.remove(id);
-  }
+  } */
 }

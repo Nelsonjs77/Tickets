@@ -15,7 +15,7 @@ export class TicketsService {
   ){}
     
   
-  create(createTicketDto: CreateTicketDto) {
+  /* create(createTicketDto: CreateTicketDto) {
     let createTicket: GetTicketDto = new GetTicketDto();
     createTicket.productos = [];
     let totalTicket = 0;
@@ -32,14 +32,14 @@ export class TicketsService {
         subtotal: (productItem.precio * p.cantidad)
       });
       totalTicket += productItem.precio * p.cantidad
-    });
+    }); */
 
-    createTicket.folio = uuidv4();
+   /*  createTicket.folio = uuidv4();
     createTicket.fecha = new Date().toLocaleDateString(),
     createTicket.total = totalTicket
 
     this.arrTicket.push(createTicket);
-  }
+  } */
 
   findAll() {
     return this.arrTicket;

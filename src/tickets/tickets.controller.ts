@@ -7,19 +7,19 @@ import { UpdateTicketDto } from './dto/update-ticket.dto';
 export class TicketsController {
   constructor(private readonly ticketsService: TicketsService) {}
 
-  @Post()
+  /* @Post()
   create(@Body() createTicketDto: CreateTicketDto) {
     return this.ticketsService.create(createTicketDto);
-  }
+  } */
 
   @Get()
   findAll() {
     return this.ticketsService.findAll();
   }
 
-  @Get(':folio')
-  findOne(@Param('folio', ParseUUIDPipe) folio: string) {
-    return this.ticketsService.findOne(folio);
+  @Get(':name')
+  findOne(@Param('name') name: string) {
+    return this.ticketsService.findOne(name);
   }
 
   @Patch(':id')
